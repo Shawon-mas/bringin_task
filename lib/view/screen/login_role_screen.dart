@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../../utilites/colors.dart';
 import '../../utilites/images.dart';
 import '../widget/circular_container_widget.dart';
 import '../widget/general_button.dart';
 import '../widget/text_widget.dart';
+import 'auth_screen.dart';
 class LoginRoleScreen extends StatelessWidget {
   const LoginRoleScreen({Key? key}) : super(key: key);
 
@@ -19,16 +22,6 @@ class LoginRoleScreen extends StatelessWidget {
           child: Column(
             children: [
 
-
-              TextField(
-
-                decoration: InputDecoration(
-                  hintText: 'Phone Number',
-                  prefixIcon: Padding(padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10), child: Text('+91     |')),
-                  prefixStyle: TextStyle(color: Colors.black),
-
-                ),
-              ),
               TextWidget(
                 value: 'Choose Your Role',
                 textColor: MyColors.fontColor,
@@ -43,6 +36,7 @@ class LoginRoleScreen extends StatelessWidget {
               GeneralButton(
                 buttonColor: MyColors.secondaryColor,
                 onPressed: (){
+                  Get.to(()=>AuthScreen());
                 },
                 value: 'Join as Job Seeker',
                 width: 200.w,

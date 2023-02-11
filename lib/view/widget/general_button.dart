@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../utilites/colors.dart';
 
@@ -10,6 +11,7 @@ class GeneralButton extends StatelessWidget {
   final bool isLoading;
   final VoidCallback onPressed;
   final double? width;
+  final double? radius;
 
   const GeneralButton({
     Key? key,
@@ -17,7 +19,7 @@ class GeneralButton extends StatelessWidget {
     required this.onPressed,
     required this.value,
     this.textColor,
-    this.isLoading = false, this.width,
+    this.isLoading = false, this.width, this.radius=15,
   }) : super(key: key);
 
   @override
@@ -27,7 +29,7 @@ class GeneralButton extends StatelessWidget {
       height: 40,
       color: buttonColor,
       elevation: 0,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(11)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius!)),
       child: !isLoading
           ? Text(
               value,
@@ -38,8 +40,12 @@ class GeneralButton extends StatelessWidget {
               ),
             )
           : Center(
-              child: CircularProgressIndicator(
-                color: Colors.white,
+              child: SizedBox(
+                height: 30.h,
+                width: 30.w,
+                child: CircularProgressIndicator(
+                  color: Colors.greenAccent,
+                ),
               ),
             ),
       onPressed: onPressed,

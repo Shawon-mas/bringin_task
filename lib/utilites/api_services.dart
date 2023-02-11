@@ -7,7 +7,7 @@ class ApiServices{
 static const String BASE_URL='https://bringin.io/api/';
 //auth url
 static const String OTP_URL='${BASE_URL}sendOTP';
-static const String OTP_URL_LOGIN='${BASE_URL}setLoginWithOTP';
+static const String OTP_URL_VERIFY='${BASE_URL}setLoginWithOTP';
 //profile url
 static const String USER_UPDATE_URL='${BASE_URL}seekerProfileUpdate';
 static const String GET_USER_PROFILE='${BASE_URL}getSeekerInfo';
@@ -32,6 +32,7 @@ class ApiKeyName{
   //otp
   static const String OTP_NUMBER='phone';
   static const String USER_ROLE='role';
+  static const String USER_OTP='OTP';
   //user profile key
 
   static const String USER_FIRST_NAME='firstName';

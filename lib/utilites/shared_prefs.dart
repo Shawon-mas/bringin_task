@@ -63,7 +63,7 @@ class SharedPrefs {
 //Token Store
   saveToken(String token) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setString('access_token', 'Bearer $token');
+    prefs.setString('access_token', token);
   }
 
   getToken() async {
